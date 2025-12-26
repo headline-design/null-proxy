@@ -10,7 +10,7 @@ const nextConfig = {
     return [
       {
         source: '/docs/:path*',
-        destination: 'https://your-docs-domain.com/docs/:path*',
+        destination: 'https://v0-null-mdx.vercel.app/docs/:path*',
       },
     ]
   },
