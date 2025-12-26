@@ -18,13 +18,13 @@ export default function Page() {
             </div>
 
             <nav className="hidden items-center gap-6 md:flex">
-              <Link
+              <a
                 href="/docs"
-                prefetch={false}
+               
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Documentation
-              </Link>
+              </a>
               <Link
                 href="/docs/guides"
                 prefetch={false}
