@@ -18,16 +18,25 @@ export default function Page() {
             </div>
 
             <nav className="hidden items-center gap-6 md:flex">
-              <Link href="/docs" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              <Link
+                href="/docs"
+                prefetch={false}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
                 Documentation
               </Link>
               <Link
                 href="/docs/guides"
+                prefetch={false}
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Guides
               </Link>
-              <Link href="/docs/api" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              <Link
+                href="/docs/api"
+                prefetch={false}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
                 API Reference
               </Link>
             </nav>
@@ -38,7 +47,9 @@ export default function Page() {
                 Search
               </Button>
               <Button asChild>
-                <Link href="/docs">Get Started</Link>
+                <Link href="/docs" prefetch={false}>
+                  Get Started
+                </Link>
               </Button>
             </div>
           </div>
@@ -58,13 +69,15 @@ export default function Page() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="/docs">
+                <Link href="/docs" prefetch={false}>
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-transparent">
-                <Link href="/docs/api">View API Reference</Link>
+                <Link href="/docs/api" prefetch={false}>
+                  View API Reference
+                </Link>
               </Button>
             </div>
           </div>
@@ -124,7 +137,7 @@ export default function Page() {
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
-                <Link href="/docs">
+                <Link href="/docs" prefetch={false}>
                   View Documentation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
