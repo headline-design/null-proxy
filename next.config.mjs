@@ -23,7 +23,7 @@ const nextConfig = {
       },
       {
         source: '/docs-static/:path+',
-        destination: 'https://v0-null-mdx.vercel.app/docs-static/:path+',
+        destination: 'https://v0-null-mdx.vercel.app/_next/:path+',
       },
     ];
   },
