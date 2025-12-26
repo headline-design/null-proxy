@@ -12,6 +12,8 @@ const nextConfig = {
         {
           source: '/docs/:path*',
           destination: 'https://v0-null-mdx.vercel.app/:path*',
+          basePath: false,
+          
         },
       ],
     };
