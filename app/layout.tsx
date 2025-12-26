@@ -7,8 +7,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "Documentation - Build Better",
-  description: "Comprehensive documentation, guides, and API references to help you build better applications.",
+  title: "Docs Template - Ship documentation sites faster",
+  description: "A production-ready Next.js template that combines a landing page with external docs using Multi-Zones.",
   generator: "v0.app",
 }
 

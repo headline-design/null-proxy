@@ -1,166 +1,108 @@
-import Link from "next/link"
-import { ArrowRight, BookOpen, Code2, Zap, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
-export default function Page() {
+function SupabaseIcon({ className }: { className?: string }) {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded bg-primary text-primary-foreground">
-                <BookOpen className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-semibold">Docs</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className={className}>
+      <path
+        fill="currentColor"
+        d="M3.084 15.25c-1.664 0-2.6-1.912-1.58-3.226L10.21.806C10.794.054 12 .466 12 1.42v7.33h8.916c1.663 0 2.6 1.912 1.58 3.226L13.79 23.194c-.584.752-1.79.34-1.79-.613V15.25z"
+      />
+    </svg>
+  )
+}
+
+export default function HomePage() {
+  return (
+    <div className="flex min-h-screen flex-col bg-background">
+      <Header />
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="mx-auto max-w-[90rem] px-6 py-24 md:px-8 md:py-32 lg:py-40">
+          <div className="max-w-2xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-[12px] font-medium text-primary">Multi-zone docs & landing template</span>
             </div>
 
-            <nav className="hidden items-center gap-6 md:flex">
+            <h1 className="text-balance text-[36px] font-semibold leading-[1.1] tracking-[-0.02em] md:text-[48px] lg:text-[56px]">
+              Ship documentation sites faster with Next.js
+            </h1>
+            <p className="mt-5 text-[17px] leading-[1.6] text-foreground/60 md:text-[18px]">
+              A production-ready template that combines a landing page with external docs using Next.js Multi-Zones.
+              Perfect for developer tools and SaaS products.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="/docs"
-               
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-[14px] font-medium text-primary-foreground transition-all duration-100 hover:brightness-110"
               >
-                Documentation
+                Get started
+                <ArrowRight className="h-4 w-4" />
               </a>
-              <Link
-                href="/docs/guides"
-                prefetch={false}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-[14px] font-medium text-foreground/60 transition-colors duration-100 hover:text-foreground"
               >
-                Guides
-              </Link>
-              <Link
-                href="/docs/api"
-                prefetch={false}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                API Reference
-              </Link>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" className="hidden sm:flex">
-                <Search className="mr-2 h-4 w-4" />
-                Search
-              </Button>
-              <Button asChild>
-                <Link href="/docs" prefetch={false}>
-                  Get Started
-                </Link>
-              </Button>
+                GitHub
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
-        </div>
-      </header>
+        </section>
 
-      {/* Hero Section */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-              Build better with our documentation
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">
-              Everything you need to integrate, customize, and deploy. Comprehensive guides, API references, and
-              examples to help you ship faster.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="/docs" prefetch={false}>
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-transparent">
-                <Link href="/docs/api" prefetch={false}>
-                  View API Reference
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-3">
-            <Card className="border-border bg-card">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <BookOpen className="h-6 w-6 text-accent" />
+        <section className="border-t border-border/40">
+          <div className="mx-auto max-w-[90rem] px-6 py-16 md:px-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="space-y-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
+                  <span className="text-[16px] font-mono font-bold text-primary">//</span>
                 </div>
-                <h3 className="mb-2 text-xl font-semibold">Comprehensive Guides</h3>
-                <p className="leading-relaxed text-muted-foreground">
-                  Step-by-step tutorials and guides to help you get started quickly and build with confidence.
+                <h3 className="text-[16px] font-semibold tracking-tight">Real MDX Support</h3>
+                <p className="text-[14px] leading-[1.6] text-foreground/50">
+                  First v0 template to render actual markdown files. No more hardcoded content.
                 </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border bg-card">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <Code2 className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="mb-2 text-xl font-semibold">API Reference</h3>
-                <p className="leading-relaxed text-muted-foreground">
-                  Complete API documentation with examples, parameters, and responses for every endpoint.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border bg-card">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                  <Zap className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="mb-2 text-xl font-semibold">Quick Start</h3>
-                <p className="leading-relaxed text-muted-foreground">
-                  Get up and running in minutes with our quick start templates and code examples.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">Ready to get started?</h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Jump into our documentation and start building today.
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg">
-                <Link href="/docs" prefetch={false}>
-                  View Documentation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-muted/20">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="flex items-center gap-2">
-              <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-primary-foreground">
-                <BookOpen className="h-4 w-4" />
               </div>
-              <span className="font-semibold">Docs</span>
+              <div className="space-y-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
+                  <span className="text-[16px] font-mono font-bold text-primary">01</span>
+                </div>
+                <h3 className="text-[16px] font-semibold tracking-tight">Multi-Zone Routing</h3>
+                <p className="text-[14px] leading-[1.6] text-foreground/50">
+                  Seamlessly combine landing pages with external docs using Next.js rewrites.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
+                  <SupabaseIcon className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-[16px] font-semibold tracking-tight">Supabase Storage</h3>
+                <p className="text-[14px] leading-[1.6] text-foreground/50">
+                  Built-in asset management with Supabase buckets for images and files.
+                </p>
+              </div>
+              <a href="/design" className="group space-y-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 transition-colors group-hover:bg-primary/20">
+                  <span className="text-[16px] font-mono font-bold text-primary">UI</span>
+                </div>
+                <h3 className="text-[16px] font-semibold tracking-tight group-hover:text-primary transition-colors">
+                  Design System
+                </h3>
+                <p className="text-[14px] leading-[1.6] text-foreground/50">
+                  Pre-built components and layouts. Copy and customize for your needs.
+                </p>
+              </a>
             </div>
-            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} All rights reserved.</p>
           </div>
-        </div>
-      </footer>
+        </section>
+      </main>
+
+      <Footer />
     </div>
   )
 }
