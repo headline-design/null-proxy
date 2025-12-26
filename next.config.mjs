@@ -9,6 +9,14 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/docs/_next/static/:path*',
+        destination: 'https://v0-null-mdx.vercel.app/_next/static/:path*',
+      },
+      {
+        source: '/docs/_next/:path*',
+        destination: 'https://v0-null-mdx.vercel.app/_next/:path*',
+      },
+      {
         source: '/docs/:path*',
         destination: 'https://v0-null-mdx.vercel.app/docs/:path*',
       },
