@@ -17,6 +17,10 @@ const nextConfig = {
         destination: 'https://v0-null-mdx.vercel.app/_next/:path*',
       },
       {
+        source: '/docs',
+        destination: 'https://v0-null-mdx.vercel.app',
+      },
+      {
         source: '/docs/:path*',
         destination: 'https://v0-null-mdx.vercel.app/docs/:path*',
       },
