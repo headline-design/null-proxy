@@ -7,15 +7,20 @@ const nextConfig = {
     unoptimized: true,
   },
   async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: '/docs/:path*',
-          destination: 'https://v0-null-mdx.vercel.app/:path*',
-          basePath: false,
-        },
-      ],
-    };
+    return [
+      {
+        source: '/docs',
+        destination: 'https://v0-null-mdx.vercel.app/docs',
+      },
+      {
+        source: '/docs/:path+',
+        destination: 'https://v0-null-mdx.vercel.app/docs/:path+',
+      },
+      {
+        source: '/docs-static/:path+',
+        destination: 'https://v0-null-mdx.vercel.app/docs-static/:path+',
+      },
+    ];
   },
 };
 
