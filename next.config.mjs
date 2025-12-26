@@ -15,15 +15,15 @@ const nextConfig = {
     return [
       {
         source: '/docs',
-        destination: 'https://v0-null-mdx.vercel.app/docs',
+        destination: 'https://v0-null-mdx-td.vercel.app/docs',
       },
       {
         source: '/docs/:path+',
-        destination: 'https://v0-null-mdx.vercel.app/docs/:path+',
+        destination: 'https://v0-null-mdx-td.vercel.app/docs/:path+',
       },
       {
         source: '/docs-static/:path+',
-        destination: 'https://v0-null-mdx.vercel.app/_next/:path+',
+        destination: 'https://v0-null-mdx-td.vercel.app/_next/:path+',
       },
     ];
   },
