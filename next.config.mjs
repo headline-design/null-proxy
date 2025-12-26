@@ -17,8 +17,16 @@ const nextConfig = {
         destination: 'https://v0-null-mdx.vercel.app/_next/:path*',
       },
       {
+        source: '/docs/favicon.ico',
+        destination: 'https://v0-null-mdx.vercel.app/favicon.ico',
+      },
+      {
+        source: '/docs/images/:path*',
+        destination: 'https://v0-null-mdx.vercel.app/images/:path*',
+      },
+      {
         source: '/docs',
-        destination: 'https://v0-null-mdx.vercel.app',
+        destination: 'https://v0-null-mdx.vercel.app/docs',
       },
       {
         source: '/docs/:path*',
