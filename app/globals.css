@@ -71,18 +71,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Enhanced focus states for accessibility - visible ring on keyboard focus */
   :focus-visible {
     @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-background;
   }
 
-  /* Remove focus ring for mouse users */
   :focus:not(:focus-visible) {
     @apply outline-none ring-0;
   }
 }
 
-/* Refined scrollbar styling */
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;
@@ -107,7 +104,6 @@
     background-color: hsl(var(--muted-foreground) / 0.5);
   }
 
-  /* Hide scrollbar but keep functionality */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -118,42 +114,6 @@
   }
 }
 
-/* Syntax highlighting for code blocks - manual token colors */
-@layer components {
-  .code-block {
-    /* Keywords: const, let, function, return, import, export, etc. */
-    .token-keyword {
-      color: #c678dd;
-    }
-    /* Strings */
-    .token-string {
-      color: #98c379;
-    }
-    /* Numbers */
-    .token-number {
-      color: #d19a66;
-    }
-    /* Comments */
-    .token-comment {
-      color: #5c6370;
-      font-style: italic;
-    }
-    /* Functions */
-    .token-function {
-      color: #61afef;
-    }
-    /* Operators */
-    .token-operator {
-      color: #56b6c2;
-    }
-    /* Punctuation */
-    .token-punctuation {
-      color: #abb2bf;
-    }
-  }
-}
-
-/* Typography refinements */
 @layer base {
   h1,
   h2,
@@ -163,86 +123,8 @@
   h6 {
     @apply font-semibold tracking-tight;
   }
-
-  .prose {
-    @apply text-foreground;
-    max-width: 68ch;
-  }
-
-  .prose h1 {
-    @apply text-4xl mb-4 mt-8 first:mt-0;
-  }
-
-  .prose h2 {
-    @apply text-2xl mb-3 mt-8 border-b border-border pb-2;
-  }
-
-  .prose h3 {
-    @apply text-xl mb-2 mt-6;
-  }
-
-  .prose h4 {
-    @apply text-lg mb-2 mt-4;
-  }
-
-  .prose p {
-    @apply mb-4 leading-7;
-  }
-
-  .prose a {
-    @apply text-primary hover:underline underline-offset-4;
-  }
-
-  .prose code {
-    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
-  }
-
-  .prose pre {
-    @apply bg-muted border border-border rounded-lg p-4 overflow-x-auto my-6;
-  }
-
-  .prose pre code {
-    @apply bg-transparent p-0;
-  }
-
-  .prose ul,
-  .prose ol {
-    @apply mb-4 pl-6;
-  }
-
-  .prose li {
-    @apply mb-2;
-  }
-
-  .prose blockquote {
-    @apply border-l-4 border-primary pl-4 italic my-6;
-  }
-
-  .prose img {
-    @apply rounded-lg my-6;
-  }
-
-  .prose table {
-    @apply w-full my-6;
-  }
-
-  .prose th {
-    @apply border-b border-border p-2 text-left font-semibold;
-  }
-
-  .prose td {
-    @apply border-b border-border p-2;
-  }
 }
 
-/* Smooth page transitions */
-@layer utilities {
-  .page-transition {
-    @apply transition-opacity duration-150 ease-out;
-  }
-}
-
-/* Selection styling */
 ::selection {
   background-color: hsl(var(--primary) / 0.3);
   color: inherit;
