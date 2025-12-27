@@ -9,7 +9,7 @@ export function Header() {
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
             <FileText className="h-4 w-4 text-primary-foreground" />
           </div>
-          <span className="text-[15px] font-semibold">Docs Template</span>
+          <span className="text-[15px] font-semibold">Null Proxy</span>
         </Link>
 
         <nav className="flex items-center gap-6">

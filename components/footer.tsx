@@ -10,7 +10,7 @@ export function Footer() {
             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary">
               <FileText className="h-3.5 w-3.5 text-primary-foreground" />
             </div>
-            <span className="text-[14px] font-semibold">Docs Template</span>
+            <span className="text-[14px] font-semibold">Null Proxy</span>
           </Link>
 
           <p className="text-[13px] text-foreground/40">© {new Date().getFullYear()} All rights reserved.</p>
