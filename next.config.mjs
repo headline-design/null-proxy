@@ -7,12 +7,16 @@ const nextConfig = {
     unoptimized: true,
   },
   async rewrites() {
+    
     return [
       // Standard Clean URLs
       { source: '/blog', destination: 'https://null-mdx.vercel.app/blog' },
       { source: '/blog/:path+', destination: 'https://null-mdx.vercel.app/blog/:path+' },
       { source: '/docs', destination: 'https://null-mdx.vercel.app/docs' },
-      { source: '/docs/:path+', destination: 'https://null-mdx.vercel.app/docs/:path+' },
+     {
+  source: '/docs/:path((?!.*\\.rsc|.*\\.segments).*)',
+  destination: 'https://null-mdx.vercel.app/docs/:path',
+},
       { source: '/about', destination: 'https://null-mdx.vercel.app/about' },
       { source: '/assets', destination: 'https://null-mdx.vercel.app/assets' },
       { source: '/assets/:path+', destination: 'https://null-mdx.vercel.app/assets/:path+' },
