@@ -177,4 +177,3 @@ Deploy both applications to Vercel:
 ---
 
 Built with Next.js and deployed on Vercel.
-
